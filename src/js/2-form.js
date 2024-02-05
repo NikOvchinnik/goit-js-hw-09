@@ -44,6 +44,9 @@ formElem.addEventListener('submit', onSubmitForm);
 
 function onSubmitForm(e) {
   e.preventDefault();
+  if (!formElem.elements.email.value || !formElem.elements.message.value) {
+   return alert("Your form is empty!")
+  };
   console.log(localObj);
   formElem.reset();
   return removeLocalStorage('feedback-form-state');
